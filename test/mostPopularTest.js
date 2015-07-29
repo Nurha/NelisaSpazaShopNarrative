@@ -26,11 +26,11 @@ describe("Find data in file", function(){
 	
 
 	it('should return the product that has sold the most items', function(){
-        var mostPopular = require("../mostPopular");
+        var mostPopProd = require("../mostPopular");
 
-        var mostPopularProduct = mostPopular.findMostpopular("./files/Nelisa Sales History.csv");
-        var expectedPopular = {'Mixed Sweets 5s':172};
-        assert.equal(expectedPopular, mostPopularProduct);
+        var mostPopularProduct = mostPopProd.mostPopular("./files/Nelisa Sales History.csv");
+        var expectedPopular = { prodName:'Mixed Sweets 5s', amount: 172 };
+        assert.deepEqual(expectedPopular, mostPopularProduct);
             
         });
 

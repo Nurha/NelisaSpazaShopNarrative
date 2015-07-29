@@ -1,32 +1,6 @@
 var fs = require("fs"); 
 
-var findFiles = function (fileName) {
-
-    var productList = []; 
-    var productMap = {};
-    var productSold =[];
-
-        var fileContent = fs.readFileSync(fileName, 'utf8'); 
-        var products = fileContent.split("\r"); 
-     
-    products.forEach(function(product){ 
-      
-      var hold = product.split(";"); 
-      var productName = hold[2];
-      
-      if(productMap[productName] === undefined && productName != "stock item"){
-        productMap[productName] =0;
-        productList.push(productName); 
-      }
-      
-    }); 
-    
-    return productList;
-
-}
-
-    var findProductsSold = function ( fileName) {
-         var productNames= [];
+  var findProductsSold = function ( fileName) {
          var productsMap = {};
          var quantitySold = [];
          // body...
@@ -50,19 +24,14 @@ var findFiles = function (fileName) {
 
              productsMap[productName] += quantity;
 
-         });
+           });
       
          //console.log(productMap);
          console.log(productsMap);
          return productsMap;
-     };
+  };
 
-  exports.linesInFiles = function(fileName){
-   var productList = findFiles(fileName);
-   return productList;
-    };
-
-    exports.productsSold = function(fileName){
+  exports.productsSold = function(fileName){
         var productsMap = findProductsSold(fileName)
         return productsMap
     };
