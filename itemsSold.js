@@ -27,7 +27,7 @@ exports.productsSold = function ( fileName) {
 
        });
   
-     //console.log(productMap);
+    
      console.log(productsMap);
      return productsMap;
 };

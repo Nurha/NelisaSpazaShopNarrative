@@ -1,13 +1,13 @@
 var fs  = require("fs"); 
 var itemsSold = require('./itemsSold');
 
-var findFiles = function (fileName) {
+var findProducts = function (fileName) {
     
     var productsMap = itemsSold.productsSold(fileName);
-    console.log("***********************************************************")
-    console.log("***********************************************************")
-    console.log("***********************************************************")
-    console.log("***********************************************************")
+    // console.log("***********************************************************")
+    // console.log("***********************************************************")
+    // console.log("***********************************************************")
+    // console.log("***********************************************************")
     console.log(productsMap);
     console.log(Object.keys(productsMap));
 
@@ -16,6 +16,6 @@ var findFiles = function (fileName) {
 }
 
 exports.linesInFiles = function(fileName){
-  var productList = findFiles(fileName);
+  var productList = findProducts(fileName);
   return productList;
 };

@@ -1,7 +1,7 @@
 var fs = require("fs"); 
 var itemsSold = require('./itemsSold');
 
-var findMostPopular = function ( fileName) {
+exports.mostPopular = function ( fileName) {
 
     var productsMap = itemsSold.productsSold(fileName);
 
@@ -24,7 +24,4 @@ var findMostPopular = function ( fileName) {
 
 };
            
-exports.mostPopular = function(fileName){
-    var mostPopularProdct = findMostPopular(fileName);
-    return mostPopularProdct;
-};
+ 
