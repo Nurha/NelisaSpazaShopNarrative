@@ -25,7 +25,7 @@ exports.getSalesPerCategory = function (fileName){
 	    'Rose (plastic)': 'Gifts',
 	    'Valentine Cards': 'Gifts'
 }
-	var productsMap = itemsSold.productsSold(fileName);
+	var productsMap = itemsSold.productsSold(fileName);//mapping
 	var categoryMap = {};
 	for(var productsName in productsMap){
 		var categoryName = productCategories[productsName];
@@ -35,7 +35,7 @@ exports.getSalesPerCategory = function (fileName){
 		};
 		categoryMap[categoryName] += qty;
 	};
-	console.log(categoryMap);
+	//console.log(categoryMap);
     return categoryMap;
 	
 };

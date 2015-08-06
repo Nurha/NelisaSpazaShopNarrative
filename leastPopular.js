@@ -1,27 +1,26 @@
 var fs = require("fs"); 
 var itemsSold = require('./itemsSold');
 
-exports.mostPopular = function ( fileName) {
+exports.leastPopular = function ( fileName) {
 
     var productsMap = itemsSold.productsSold(fileName);
 
     // find which product was sold the most of...
-    var mostPopularProdct = {}; 
-    var max = 0;
+    var leastPopularProdct = {}; 
+    var min = 172;
     for(var prod in productsMap){
         var value = productsMap[prod];
-        if(productsMap[prod] > max){
-            max = productsMap[prod];
-            mostPopularProdct = {
+        if(productsMap[prod] < min){
+            min = productsMap[prod];
+            leastPopularProdct = {
                 prodName: prod,
-                amount: max
+                amount: min
             };
         };
     };
  
-   // console.log(mostPopularProdct);
-    return mostPopularProdct;
+    //console.log(leastPopularProdct);
+    return leastPopularProdct;
 
 };
            
- 

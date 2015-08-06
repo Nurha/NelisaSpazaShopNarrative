@@ -19,7 +19,7 @@ exports.findMostProfitableCategory = function ( fileName) {
         };
     };
  
-    console.log(mostPopularCategory);
+    //console.log(mostPopularCategory);
     return mostPopularCategory;
 
 };

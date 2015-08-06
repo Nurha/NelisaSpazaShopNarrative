@@ -34,11 +34,25 @@ describe('Find data in file', function(){
                 var expectedSalesPerCategory = {'Fruits' : 228, 'Candies' : 192, 'Softdrinks' : 328, 'Dairy' : 267, 'Starch' : 275, 'Toiletries' : 76, 'Canned Goods' : 180, 'Gifts' : 28};
                 assert.deepEqual(salesPerCategory,expectedSalesPerCategory);
         });
-        it('it should show the most profitible category', function(){
+        it('it should show the most popular category', function(){
                 var mostProfitibleCategory = require('../findMostPopularCategory');
                 var profitableCategories = mostProfitibleCategory.findMostProfitableCategory('./files/Nelisa Sales History.csv');
                 var expectedCategory = {categoryName : 'Softdrinks', qty : 328};
                 assert.deepEqual(expectedCategory,profitableCategories);
+                
+        });
+        it('should return the product that has sold the least items', function(){
+                var leastPopProd = require('../leastPopular');
+                var leastPopularProduct = leastPopProd.leastPopular('./files/Nelisa Sales History.csv');
+                var expectedLeastPopular = { prodName: 'Rose (plastic)', amount: 14 };
+                assert.deepEqual(expectedLeastPopular, leastPopularProduct);
+        });
+
+        it('it should show the least popular category', function(){
+                var leastPopCategory = require('../findLeastPopularCategory');
+                var leastPopularCategory = leastPopCategory.findLeastPopularCategory('./files/Nelisa Sales History.csv');
+                var expectedCategory = {categoryName : 'Gifts', qty : 28};
+                assert.deepEqual(expectedCategory,leastPopularCategory);
                 
         });
 

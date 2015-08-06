@@ -8,8 +8,8 @@ var findProducts = function (fileName) {
     // console.log("***********************************************************")
     // console.log("***********************************************************")
     // console.log("***********************************************************")
-    console.log(productsMap);
-    console.log(Object.keys(productsMap));
+   // console.log(productsMap);
+    //console.log(Object.keys(productsMap));
 
     return Object.keys(productsMap);
 

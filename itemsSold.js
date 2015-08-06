@@ -28,6 +28,6 @@ exports.productsSold = function ( fileName) {
        });
   
     
-     console.log(productsMap);
+     //console.log(productsMap);
      return productsMap;
 };
